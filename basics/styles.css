@@ -1,0 +1,51 @@
+body{
+    background-color: #141414;
+  }
+  *{
+    color : white
+
+  }
+  
+  #circle {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background-color: #efc64a;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    transition: all;
+    transition-duration: 3000;
+    transition-timing-function: ease-out;
+  }
+
+  .showcase{
+    animation: showcaseani 3s infinite linear;
+  }
+  
+  @keyframes showcaseani {
+    0%{
+      transform: translateX(-180px);
+    }
+    100%{
+      transform: translateX(0px);
+    }
+  }
+  
+  .spel {
+    
+    transform: translate(-42vw ,0%);
+    transform-origin: center center ;
+  }
+  
+  .spelc{
+    top: 50%;
+    left:50%;
+    transform: translate(-6rem,-6rem);
+  
+  }
+  .center{
+    top : 50%;
+    left : 50%;
+    transform: translate(-50%,-50%) !important;
+  }

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Parcel Sandbox</title>
+	<meta charset="UTF-8" />
+	<script src="https://cdn.tailwindcss.com"></script>
+	<!-- tailwind cdn -->
+    <style> 
+		body{
+    background-color: #141414;
+  }
+  *{
+    color : white
+
+  }
+  
+  #circle {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background-color: #efc64a;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    transition: all;
+    transition-duration: 3000;
+    transition-timing-function: ease-out;
+  }
+
+  .showcase{
+    animation: showcaseani 3s infinite linear;
+  }
+  
+  @keyframes showcaseani {
+    0%{
+      transform: translateX(-180px);
+    }
+    100%{
+      transform: translateX(0px);
+    }
+  }
+  
+  .spel {
+    
+    transform: translate(-42vw ,0%);
+    transform-origin: center center ;
+  }
+  
+  .spelc{
+    top: 50%;
+    left:50%;
+    transform: translate(-6rem,-6rem);
+  
+  }
+  .center{
+    top : 50%;
+    left : 50%;
+    transform: translate(-50%,-50%) !important;
+  }
+    </style>
+
+</head>
+
+<body class="bg-[#f5f1f0] ">
+	<section class="grid ">
+		<div class="">
+			<h1>Hello, I'm
+				<p class="">Olivia Wilson</p>
+				About Me!</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+				Vivamus mattis consectetur ullamcorper. Aliquam cursus,
+				nulla et elementum sodales,
+				enim orci consectetur libero, id placerat turpis nibh in ex.
+				Suspendisse eget eros bibendum, malesuada enim eu,
+				condimentum velit.</p>
+		</div>
+		<div>
+			<img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Findianexpress.com%2Farticle%2Fentertainment%2Ftelevision%2Fbhabiji-ghar-par-hain-actor-nehha-pendse-getting-criticism-before-people-have-even-seen-me-as-anita-bhabhi-saumya-tandon-7189478%2F&psig=AOvVaw0hfNxheovuuWSwpgy7dciY&ust=1711782164140000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCPDKhdTzmIUDFQAAAAAdAAAAABAD" alt="">
+			<h2>Frontend
+				Developer</h2>
+		</div>
+	</section>
+	<section>
+		<h2>Gallery</h2>
+		<div class="flex">
+			<img src="https://www.google.com/" alt="">
+			<img src="https://www.google.com/" alt="">
+			<img src="https://www.google.com/" alt="">
+		</div>
+	</section>
+
+	<section class="grid">
+		<div>
+			<h1>My Interests!</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+				mattis consectetur ullamcorper.
+				Aliquam cursus, nulla et elementum sodales, enim orci consectetur libero,
+				id placerat turpis nibh in ex.</p>
+		</div>
+		<div>
+			<h2>Qualifications:</h2>
+			<div class="flex">
+				<p>2021</p>
+				<p>Matriculation</p>
+			</div>
+			<div class="flex">
+				<p>2023</p>
+				<p>Intermidiate</p>
+			</div>
+			<div class="flex">
+				<p>2027</p>
+				<p>Under graduation</p>
+			</div>
+		</div>
+	</section>
+
+	</script>
+</body>
+
+</html>
