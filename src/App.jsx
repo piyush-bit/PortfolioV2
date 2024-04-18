@@ -310,7 +310,7 @@ function App() {
           </div>
         </div>
       </section>
-      <section className="h-screen w-screen bg-stone-400 relative overflow-hidden">
+      <section className="h-screen w-screen bg-stone-400 relative overflow-hidden hidden">
         <div className="text-7xl m-20">
           My <br /> Skillset
         </div>
@@ -332,7 +332,9 @@ function App() {
           </div>
         </div>
       </section>
-
+      <section>
+        
+      </section>
       <section className=" w-screen px-20  bg-slate-800 ">
         <div className="py-20">
           <div className="w-96 text-xl">
@@ -367,9 +369,9 @@ function App() {
             View Resume
           </div>
           <div className="flex gap-2  mx-auto my-6 ">
-            <div>Linkedin</div>
-            <div>Github</div>
-            <div>CodePen</div>
+            <a href="https://www.linkedin.com/in/piyush-cv/">Linkedin</a>
+            <a href="https://github.com/piyush-bit/">Github</a>
+            <a href="https://www.geeksforgeeks.org/user/pyshkmr2017/">GFG</a>
           </div>
         </div>
       </section>
@@ -380,33 +382,37 @@ function App() {
               Let's <br />
               Connect.
             </div>
-            <div className="my-10">mr.piyush.cv@gmail.com</div>
+            
+            <div className="my-10"><a href="mailto:mr.piyush.cv@gmail.com">mr.piyush.cv@gmail.com</a></div>
             <div className="flex justify-between">
-              <img
+              <a href="https://twitter.com/Piyush_cv"><img
                 className="h-5 invert "
                 src="https://cdn-icons-png.flaticon.com/64/5968/5968830.png"
-                alt=""
-              />
+                alt="x"
+              /></a>
+              <a href="https://www.instagram.com/piyush.cv/">
               <img
                 className="h-5 invert "
                 src=" https://cdn-icons-png.flaticon.com/64/717/717392.png"
-                alt=""
+                alt="insta"
               />
-              <img
+              </a>
+              
+              <a href="https://www.linkedin.com/in/piyush-cv/"><img
                 className="h-5 invert "
                 src="https://cdn-icons-png.flaticon.com/64/3128/3128219.png"
-                alt=""
-              />
-              <img
+                alt="linkedin"
+              /></a>
+              <a href="https://github.com/piyush-bit/"><img
                 className="h-5 invert "
                 src="https://cdn-icons-png.flaticon.com/512/2111/2111425.png"
-                alt=""
-              />
-              <img
+                alt="github"
+              /></a>
+              <a href="https://www.geeksforgeeks.org/user/pyshkmr2017/"><img
                 className="h-5 invert "
                 src="https://cdn-icons-png.flaticon.com/512/10478/10478244.png"
-                alt=""
-              />
+                alt="CLI"
+              /></a>
             </div>
           </div>
           <div></div>
