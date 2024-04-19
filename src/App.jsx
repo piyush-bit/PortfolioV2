@@ -332,8 +332,101 @@ function App() {
           </div>
         </div>
       </section>
-      <section>
-        
+      <section className="min-h-screen w-full bg-slate-900 py-20 px-[7%] flex flex-col  ">
+        <div className="text-7xl mb-16 ">
+          My <br /> Skillsets
+        </div>
+        //Language
+        <div className="flex gap-5 mb-8">
+          <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center">
+            <img className="h-20" src="https://cdn-icons-png.flaticon.com/512/5968/5968381.png" alt="" />
+          </div>
+          <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center">
+            <img className="h-20" src="https://cdn-icons-png.flaticon.com/512/5968/5968282.png" alt="" />
+          </div>
+          <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center">
+            <img className="h-20" src="https://cdn-icons-png.flaticon.com/512/6132/6132222.png" alt="" />
+          </div>
+          <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center">
+            <img className="h-20" src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" alt="" />
+          </div>
+        </div>
+
+        //Web Technologies
+        <div className="flex gap-5 mb-8">
+          <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center">
+            <img className="h-20" src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_html_icon_130541.png" alt="html" />
+          </div>
+          <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center">
+            <img className="h-20" src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_css_icon_130661.png" alt="css" />
+          </div>
+          <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center">
+            <img className="h-20" src="https://cdn.icon-icons.com/icons2/3245/PNG/512/node_icon_198061.png" alt="js" />
+          </div>
+
+          <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center">
+            <img className="h-20" src="https://miro.medium.com/v2/resize:fit:1300/format:webp/1*4BtGcPz3JauG9qsNXzLMXA.gif" alt="" />
+          </div>
+
+          <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center">
+            <img className="h-20" src="https://miro.medium.com/v2/resize:fit:600/format:webp/1*7kx2CABxc38topzfJ_vZsQ.jpeg" alt="" />
+          </div>
+          <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center">
+            <img className="h-20" src="https://cdn.icon-icons.com/icons2/2699/PNG/512/graphql_logo_icon_171045.png" alt="" />
+          </div>
+        </div>
+
+        //Framework and Libraries
+        <div className="flex gap-5 mb-8">
+          <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center">
+            <img className="h-20" src="https://cdn.icon-icons.com/icons2/2415/PNG/512/react_original_wordmark_logo_icon_146375.png" alt="Reactjs" />
+          </div>
+          <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center">
+            <img className="h-20" src="https://cdn.icon-icons.com/icons2/2699/PNG/512/expressjs_logo_icon_169186.png" alt="express" />
+          </div>
+          <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center">
+            <img className="h-20" src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_tailwind_icon_130128.png" alt="tailwind" />
+          </div>
+          <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center">
+            <img className="h-20" src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_light_prisma_icon_130444.png" alt="prisma" />
+          </div>
+          <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center">
+            <img className="h-20" src="https://cdn.icon-icons.com/icons2/2699/PNG/512/socketio_logo_icon_168806.png" alt="socket.io" />
+          </div>
+        </div>
+
+        //Database
+        <div className="flex gap-5 mb-8">
+          <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center">
+            <img className="h-20" src="https://cdn.icon-icons.com/icons2/2415/PNG/512/mongodb_original_wordmark_logo_icon_146425.png" alt="mongodb" />
+          </div>
+          <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center">
+            <img className="h-20" src="https://cdn.icon-icons.com/icons2/2699/PNG/512/postgresql_vertical_logo_icon_168900.png" alt="postgresql" />
+          </div>
+          <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center">
+            <img className="h-20" src="https://cdn.icon-icons.com/icons2/2415/PNG/512/redis_original_wordmark_logo_icon_146369.png" alt="redis" />
+          </div>
+          <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center">
+            <img className="h-20" src="https://cdn.icon-icons.com/icons2/2699/PNG/512/mysql_official_logo_icon_169938.png" alt="Mysql" />
+          </div>
+        </div>
+
+        //Tools
+        <div className="flex gap-5 mb-8">
+          <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center">
+            <img className="h-20" src="https://cdn-icons-png.flaticon.com/512/15466/15466163.png" alt="git" />
+          </div>
+          <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center">
+            <img className="h-20" src="https://cdn-icons-png.flaticon.com/512/2111/2111432.png" alt="github" />
+          </div>
+          <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center">
+            <img className="h-20" src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" alt="figma" />
+          </div>
+          <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center">
+            <img className="h-20" src="https://cdn.icon-icons.com/icons2/3053/PNG/512/postman_alt_macos_bigsur_icon_189814.png" alt="postman" />
+          </div>
+        </div>
+
       </section>
       <section className=" w-screen px-20  bg-slate-800 ">
         <div className="py-20">
