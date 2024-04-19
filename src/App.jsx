@@ -362,8 +362,11 @@ function App() {
         </div>
 
         <div className="w-full flex flex-col py-40 ">
-          <div className="my-20">
-            <div className="bg-yellow-400 h-[30rem] w-80 mx-auto rounded-lg"></div>
+          <div className="my-20 ml-80 flex relative group">
+            <div className="bg-yellow-400 h-[27rem] w-80 mx-auto rounded-lg relative right-32 group-hover:rotate-6 transition-all duration-200 origin-bottom top-5">
+            </div>
+            <img className="h-[30rem] -rotate-2 absolute right-1/2 group-hover:-rotate-12 transition-all duration-200 origin-bottom" src="/Portfolio.png" alt="" />
+
           </div>
           <div className="mx-auto bg-yellow-400 text-black text-lg px-6 py-3 rounded-full">
             View Resume
