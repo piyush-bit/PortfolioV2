@@ -108,15 +108,22 @@ function App() {
     },
   ];
 
+  function scrollToSection(id) {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
   return (
     <>
       <nav className="w-screen fixed bottom-8 z-50 ">
-        <div className="w-fit mx-auto bg-black rounded-full bg-opacity-45  py-4 px-10 flex gap-5 text-xl">
-          <a href="">Works</a>
-          <a href="">Skills</a>
-          <a href="">Experience</a>
-          <a href="">Resume</a>
-          <a href="">Contact</a>
+        <div className="w-fit mx-auto bg-black rounded-full bg-opacity-85  py-4 px-10 flex gap-8 text-xl  shadow">
+          <p className="cursor-pointer" onClick={() => scrollToSection("works")}>Works</p>
+          <a className="cursor-pointer" onClick={() => scrollToSection("skills")}>Skills</a>
+          {/* <a className="cursor-pointer" onClick={() => scrollToSection("section1")}>Experience</a> */}
+          <a className="cursor-pointer" onClick={() => scrollToSection("resume")}>Resume</a>
+          <a className="cursor-pointer" onClick={() => scrollToSection("contact")}>Contact</a>
         </div>
       </nav>
       <section className="bg-gray-70 h-screen relative w-screen ">
@@ -152,7 +159,7 @@ function App() {
           </div>
         </div>
       </section>
-      <section className="bg-gray-700 rounded-t-2xl flex flex-col overflow-x-auto">
+      <section id="works" className="bg-gray-700 rounded-t-2xl flex flex-col overflow-x-auto">
         <div className="flex h-16 items-center gap-8 relative showcase">
           <img
             className="h-5 invert opacity-25"
@@ -332,7 +339,7 @@ function App() {
           </div>
         </div>
       </section>
-      <section className="min-h-screen w-full bg-slate-900 py-20 px-[7%] flex flex-col  ">
+      <section id="skills" className="min-h-screen w-full bg-slate-900 py-20 px-[7%] flex flex-col  ">
         <div className="text-7xl mb-16 ">
           My <br /> Skillsets
         </div>
@@ -428,7 +435,7 @@ function App() {
         </div>
 
       </section>
-      <section className=" w-screen px-20  bg-slate-800 ">
+      <section id="resume" className=" w-screen px-20  bg-slate-800 ">
         <div className="py-20">
           <div className="w-96 text-xl">
             I've worked in UI design and front-end development, so I can
@@ -471,7 +478,7 @@ function App() {
           </div>
         </div>
       </section>
-      <section className="min-h-screen w-screen px-20 py-20 flex flex-col bg-[#141414] ">
+      <section id="contact" className="min-h-screen w-screen px-20 py-20 flex flex-col bg-[#141414] ">
         <div className="flex">
           <div className="w-80">
             <div className="text-7xl mt-10">
