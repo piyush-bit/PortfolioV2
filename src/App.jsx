@@ -10,7 +10,6 @@ function App() {
   const hero = useRef();
   const one = useRef();
   const two = useRef();
-  
 
   const skillsHeading = useRef();
   const languageSection = useRef();
@@ -19,8 +18,14 @@ function App() {
   const databaseSection = useRef();
   const toolsSection = useRef();
 
-  useEffect(() => {
+  // Add these refs to your component
+  const resumeSection = useRef();
+  const fullstack = useRef();
+  const systems = useRef();
+  const devops = useRef();
+  const resumeImage = useRef();
 
+  useEffect(() => {
     //scrolltrigger for hero
     gsap.to(hero.current, {
       scale: 0.5,
@@ -35,8 +40,8 @@ function App() {
     });
 
     //scrolltrigger for creative
-    gsap.to(one.current , {
-      left : 0 ,
+    gsap.to(one.current, {
+      left: 0,
       scrollTrigger: {
         trigger: one.current,
         start: "top 100%",
@@ -44,19 +49,19 @@ function App() {
         scrub: true,
         // markers: true,
         id: "scrub",
-      }})
-      gsap.to(two.current , {
-        left : 0 ,
-        scrollTrigger: {
-          trigger: one.current,
-          start: "top 100%",
-          end: "end -10% ",
-          scrub: true,
-          // markers: true,
-          id: "scrub",
-        }})
-  
-  
+      },
+    });
+    gsap.to(two.current, {
+      left: 0,
+      scrollTrigger: {
+        trigger: one.current,
+        start: "top 100%",
+        end: "end -10% ",
+        scrub: true,
+        // markers: true,
+        id: "scrub",
+      },
+    });
 
     // gsap.to('.horizontal', {
     //   x: () => horizontalSection.scrollWidth * -1,
@@ -70,65 +75,129 @@ function App() {
     //     invalidateOnRefresh: true
     //   }
     // });
-// Animation for skills section
-gsap.fromTo(skillsHeading.current, 
-  { x: -100, opacity: 0 },
-  { 
-    x: 0, 
-    opacity: 1, 
-    duration: 1,
-    scrollTrigger: {
-      trigger: skillsHeading.current,
-      start: "top 80%",
-      toggleActions: "play none none reverse", // play on enter, reverse on leave
-    },
-  }
-);
+    // Animation for skills section
+    gsap.fromTo(
+      skillsHeading.current,
+      { x: -100, opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 1,
+        scrollTrigger: {
+          trigger: skillsHeading.current,
+          start: "top 80%",
+          toggleActions: "play none none reverse", // play on enter, reverse on leave
+        },
+      }
+    );
 
-// Animation for each skill category
-const skillSections = [
-  languageSection.current,
-  webTechSection.current,
-  frameworkSection.current,
-  databaseSection.current,
-  toolsSection.current
-];
+    // Animation for each skill category
+    const skillSections = [
+      languageSection.current,
+      webTechSection.current,
+      frameworkSection.current,
+      databaseSection.current,
+      toolsSection.current,
+    ];
 
-skillSections.forEach((section, index) => {
-  // Animate section entrance
-  gsap.fromTo(section, 
-    { y: 50, opacity: 0 },
-    { 
-      y: 0, 
-      opacity: 1, 
-      duration: 0.8,
-      delay: index * 0.1,
-      scrollTrigger: {
-        trigger: section,
-        start: "top 85%",
-        toggleActions: "play none none reverse", // play on enter, reverse on leave
-      },
-    }
-  );
+    skillSections.forEach((section, index) => {
+      // Animate section entrance
+      gsap.fromTo(
+        section,
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          delay: index * 0.1,
+          scrollTrigger: {
+            trigger: section,
+            start: "top 85%",
+            toggleActions: "play none none reverse", // play on enter, reverse on leave
+          },
+        }
+      );
 
-  // Animate each skill card inside the section
-  const skillCards = section.querySelectorAll('.skill-card');
-  gsap.fromTo(skillCards, 
-    { scale: 0.8, opacity: 0 },
-    { 
-      scale: 1, 
-      opacity: 1, 
-      stagger: 0.1,
-      duration: 0.5,
-      scrollTrigger: {
-        trigger: section,
-        start: "top 80%",
-        toggleActions: "play none none reverse", // play on enter, reverse on leave
-      },
-    }
-  );
-});
-    
+      // Animate each skill card inside the section
+      const skillCards = section.querySelectorAll(".skill-card");
+      gsap.fromTo(
+        skillCards,
+        { scale: 0.8, opacity: 0 },
+        {
+          scale: 1,
+          opacity: 1,
+          stagger: 0.1,
+          duration: 0.5,
+          scrollTrigger: {
+            trigger: section,
+            start: "top 80%",
+            toggleActions: "play none none reverse", // play on enter, reverse on leave
+          },
+        }
+      );
+    });
+    // Animation for resume section text
+    gsap.fromTo(
+      fullstack.current,
+      { left: "-30rem", opacity: 0 },
+      {
+        left: 0,
+        opacity: 1,
+        duration: 1,
+        scrollTrigger: {
+          trigger: resumeSection.current,
+          start: "top 60%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      systems.current,
+      { opacity: 0 },
+      {
+        opacity: 1,
+        duration: 1,
+        delay: 0.3,
+        scrollTrigger: {
+          trigger: resumeSection.current,
+          start: "top 60%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      devops.current,
+      { left: "30rem", opacity: 0 },
+      {
+        left: 0,
+        opacity: 1,
+        duration: 1,
+        delay: 0.6,
+        scrollTrigger: {
+          trigger: resumeSection.current,
+          start: "top 60%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+
+    // Animation for resume image
+    gsap.fromTo(
+      resumeImage.current,
+      { scale: 0.8, opacity: 0 },
+      {
+        scale: 1,
+        opacity: 1,
+        duration: 1,
+        scrollTrigger: {
+          trigger: resumeImage.current,
+          start: "top 70%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
   }, []);
 
   const [adjfac, setAdjfac] = useState(0);
@@ -179,7 +248,7 @@ skillSections.forEach((section, index) => {
   function scrollToSection(id) {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   }
 
@@ -187,25 +256,55 @@ skillSections.forEach((section, index) => {
     <>
       <nav className="w-full fixed bottom-8 z-50 ">
         <div className="w-fit mx-auto bg-black rounded-full bg-opacity-85  py-4 px-8 sm:px-10 flex gap-4 sm:gap-8 text-sm sm:text-xl  shadow">
-          <p className="cursor-pointer" onClick={() => scrollToSection("works")}>Works</p>
-          <a className="cursor-pointer" onClick={() => scrollToSection("skills")}>Skills</a>
+          <p
+            className="cursor-pointer"
+            onClick={() => scrollToSection("works")}
+          >
+            Works
+          </p>
+          <a
+            className="cursor-pointer"
+            onClick={() => scrollToSection("skills")}
+          >
+            Skills
+          </a>
           {/* <a className="cursor-pointer" onClick={() => scrollToSection("section1")}>Experience</a> */}
-          <a className="cursor-pointer" onClick={() => scrollToSection("resume")}>Resume</a>
-          <a className="cursor-pointer" onClick={() => scrollToSection("contact")}>Contact</a>
+          <a
+            className="cursor-pointer"
+            onClick={() => scrollToSection("resume")}
+          >
+            Resume
+          </a>
+          <a
+            className="cursor-pointer"
+            onClick={() => scrollToSection("contact")}
+          >
+            Contact
+          </a>
         </div>
       </nav>
       <section className="bg-gray-70 h-screen relative w-full">
-        <ShootingStars   starWidth={30}/>
-        <StarsBackground/>
+        <ShootingStars starWidth={30} />
+        <StarsBackground />
         <header className="flex gap-4 md:gap-8 items-center my-10 md:px-20 px-4">
           <div></div>
-          <div className="ml-auto uppercase">Banglore , {new Intl.DateTimeFormat('en-IN', { hour: 'numeric', minute: '2-digit', hour12: true }).format(new Date())} IST</div>
+          <div className="ml-auto uppercase">
+            Banglore ,{" "}
+            {new Intl.DateTimeFormat("en-IN", {
+              hour: "numeric",
+              minute: "2-digit",
+              hour12: true,
+            }).format(new Date())}{" "}
+            IST
+          </div>
           <div className="flex items-center gap-2 outline outline-[0.5px] w-fit px-4 py-2 rounded-full ">
             <div className="relative">
               <div className="bg-green-400 h-2 w-2 rounded-full "></div>
               <div></div>
             </div>
-            <div className="uppercase text-xs md:text-sm lg:text-base">open to work</div>
+            <div className="uppercase text-xs md:text-sm lg:text-base">
+              open to work
+            </div>
           </div>
         </header>
         <div className="fixed h-screen w-full -z-30 -top-10">
@@ -222,9 +321,13 @@ skillSections.forEach((section, index) => {
               Creative Fullstack <br />
               Developer.
             </div>
-            <div className="text-center text-xs md:text-3xl font-light pb-20 px-4">
-              I develop accessible, responsive, interactive, and animated <br />
-              websites with a strong focus on performance.
+            <div className="text-center text-xs md:text-xl lg:text-3xl font-light pb-20 px-4">
+              I build complete software solutions from frontend to backend, with
+              expertise in
+              <br className="hidden md:block" />
+              low-level systems programming and DevOps automation.
+              <br className="hidden sm:block" />
+              Passionate about writing high-performance code in Go.
             </div>
           </div>
         </div>
@@ -232,7 +335,10 @@ skillSections.forEach((section, index) => {
       {/* <section className="h-screen bg-green-300"></section>
       <section className="h-screen"></section>
       <section className="h-screen"></section> */}
-      <section id="works" className="bg-gray-700 rounded-t-2xl flex flex-col overflow-hidden">
+      <section
+        id="works"
+        className="bg-gray-700 rounded-t-2xl flex flex-col overflow-hidden"
+      >
         <div className="flex h-16 items-center gap-8 relative showcase  ">
           <img
             className="h-5 invert opacity-25"
@@ -358,216 +464,371 @@ skillSections.forEach((section, index) => {
               curated selection showcasing my expertise and the achieved
               results.
             </div>
-            <button className="mt-auto bg-yellow-300 w-fit px-6 my-4 py-2 rounded-full text-lg text-black" onClick={() => scrollToSection("contact")}>
+            <button
+              className="mt-auto bg-yellow-300 w-fit px-6 my-4 py-2 rounded-full text-lg text-black"
+              onClick={() => scrollToSection("contact")}
+            >
               Contact
             </button>
           </div>
-          <ProjectElement project={{ name : "YCourses", year : "2023", image : yc}} />
+          <ProjectElement
+            project={{ name: "YCourses", year: "2023", image: yc }}
+          />
           {/* <ProjectElement project={{ name : "YCourses", year : "2023", image : yc}} /> */}
           {/* <ProjectElement project={{ name : "YCourses", year : "2023", image : yc}} /> */}
         </div>
       </section>
 
-      <section id="skills" className="min-h-screen w-full bg-slate-900 py-20 px-[7%] flex flex-col">
-  <div className="text-7xl mb-20" ref={skillsHeading}>
-    My <br /> Skillsets
-  </div>
-  
-  {/* Languages */}
-  <div ref={languageSection} className="mb-16">
-    <h2 className="text-3xl font-semibold mb-8 text-yellow-400 border-b-2 border-yellow-400 pb-2 w-fit">
-      Programming Languages
-    </h2>
-    <div className="flex flex-wrap gap-5">
-      <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
-        <img className="h-20" src="https://cdn-icons-png.flaticon.com/512/5968/5968381.png" alt="TypeScript" />
-      </div>
-      <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
-        <img className="h-20" src="https://cdn-icons-png.flaticon.com/512/5968/5968282.png" alt="JavaScript" />
-      </div>
-      <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
-        <img className="h-20" src="https://cdn-icons-png.flaticon.com/512/6132/6132222.png" alt="C++" />
-      </div>
-      <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
-        <img className="h-20" src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" alt="Python" />
-      </div>
-    </div>
-  </div>
+      <section
+        id="skills"
+        className="min-h-screen w-full bg-slate-900 py-20 px-[7%] flex flex-col"
+      >
+        <div className="text-7xl mb-20" ref={skillsHeading}>
+          My <br /> Skillsets
+        </div>
 
-  {/* Web Technologies */}
-  <div ref={webTechSection} className="mb-16">
-    <h2 className="text-3xl font-semibold mb-8 text-green-400 border-b-2 border-green-400 pb-2 w-fit">
-      Web Technologies
-    </h2>
-    <div className="flex flex-wrap gap-5">
-      <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
-        <img className="h-20" src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_html_icon_130541.png" alt="HTML" />
-      </div>
-      <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
-        <img className="h-20" src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_css_icon_130661.png" alt="CSS" />
-      </div>
-      <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
-        <img className="h-20" src="https://cdn.icon-icons.com/icons2/3245/PNG/512/node_icon_198061.png" alt="NodeJS" />
-      </div>
-      <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
-        <img className="h-20" src="https://miro.medium.com/v2/resize:fit:1300/format:webp/1*4BtGcPz3JauG9qsNXzLMXA.gif" alt="RESTful API" />
-      </div>
-      <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
-        <img className="h-20" src="https://miro.medium.com/v2/resize:fit:600/format:webp/1*7kx2CABxc38topzfJ_vZsQ.jpeg" alt="Auth" />
-      </div>
-      <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
-        <img className="h-20" src="https://cdn.icon-icons.com/icons2/2699/PNG/512/graphql_logo_icon_171045.png" alt="GraphQL" />
-      </div>
-    </div>
-  </div>
-
-  {/* Frameworks and Libraries */}
-  <div ref={frameworkSection} className="mb-16">
-    <h2 className="text-3xl font-semibold mb-8 text-blue-400 border-b-2 border-blue-400 pb-2 w-fit">
-      Frameworks & Libraries
-    </h2>
-    <div className="flex flex-wrap gap-5">
-      <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
-        <img className="h-20" src="https://cdn.icon-icons.com/icons2/2415/PNG/512/react_original_wordmark_logo_icon_146375.png" alt="ReactJS" />
-      </div>
-      <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
-        <img className="h-20" src="https://cdn.icon-icons.com/icons2/2699/PNG/512/expressjs_logo_icon_169186.png" alt="Express" />
-      </div>
-      <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
-        <img className="h-20" src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_tailwind_icon_130128.png" alt="Tailwind" />
-      </div>
-      <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
-        <img className="h-20" src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_light_prisma_icon_130444.png" alt="Prisma" />
-      </div>
-      <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
-        <img className="h-20" src="https://cdn.icon-icons.com/icons2/2699/PNG/512/socketio_logo_icon_168806.png" alt="Socket.io" />
-      </div>
-    </div>
-  </div>
-
-  {/* Database */}
-  <div ref={databaseSection} className="mb-16">
-    <h2 className="text-3xl font-semibold mb-8 text-purple-400 border-b-2 border-purple-400 pb-2 w-fit">
-      Databases
-    </h2>
-    <div className="flex flex-wrap gap-5">
-      <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
-        <img className="h-20" src="https://cdn.icon-icons.com/icons2/2415/PNG/512/mongodb_original_wordmark_logo_icon_146425.png" alt="MongoDB" />
-      </div>
-      <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
-        <img className="h-20" src="https://cdn.icon-icons.com/icons2/2699/PNG/512/postgresql_vertical_logo_icon_168900.png" alt="PostgreSQL" />
-      </div>
-      <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
-        <img className="h-20" src="https://cdn.icon-icons.com/icons2/2415/PNG/512/redis_original_wordmark_logo_icon_146369.png" alt="Redis" />
-      </div>
-      <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
-        <img className="h-20" src="https://cdn.icon-icons.com/icons2/2699/PNG/512/mysql_official_logo_icon_169938.png" alt="MySQL" />
-      </div>
-    </div>
-  </div>
-
-  {/* Tools */}
-  <div ref={toolsSection} className="mb-16">
-    <h2 className="text-3xl font-semibold mb-8 text-red-400 border-b-2 border-red-400 pb-2 w-fit">
-      Development Tools
-    </h2>
-    <div className="flex flex-wrap gap-5">
-      <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
-        <img className="h-20" src="https://cdn-icons-png.flaticon.com/512/15466/15466163.png" alt="Git" />
-      </div>
-      <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
-        <img className="h-20" src="https://cdn-icons-png.flaticon.com/512/2111/2111432.png" alt="GitHub" />
-      </div>
-      <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
-        <img className="h-20" src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" alt="Figma" />
-      </div>
-      <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
-        <img className="h-20" src="https://cdn.icon-icons.com/icons2/3053/PNG/512/postman_alt_macos_bigsur_icon_189814.png" alt="Postman" />
-      </div>
-    </div>
-  </div>
-</section>
-      <section id="resume" className=" w-full px-20  bg-slate-800 hidden ">
-        <div className="py-20 hidden">
-          <div className="w-96 text-xl">
-            I've worked in UI design and front-end development, so I can
-            understand designs well and builds effective communication between
-            team members.
-          </div>
-
-          <div className="my-36 relative mx-auto w-fit">
-            <div className="text-[9rem] font-semibold -my-24 py-2 relative left-[-30rem]" ref={one}>
-              Creative
+        {/* Languages */}
+        <div ref={languageSection} className="mb-16">
+          <h2 className="text-3xl font-semibold mb-8 text-yellow-400 border-b-2 border-yellow-400 pb-2 w-fit">
+            Programming Languages
+          </h2>
+          <div className="flex flex-wrap gap-5">
+            <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
+              <img
+                className="h-20"
+                src="https://cdn-icons-png.flaticon.com/512/5968/5968381.png"
+                alt="TypeScript"
+              />
             </div>
-            <div className="text-[9rem] font-semibold -my-24 py-2 relative">
-              FullStack
+            <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
+              <img
+                className="h-20"
+                src="https://cdn-icons-png.flaticon.com/512/5968/5968282.png"
+                alt="JavaScript"
+              />
             </div>
-            <div className="text-[9rem] font-semibold -my-24 py-2 relative left-[30rem] ctwo" ref={two}>
-              Developer
+            <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
+              <img
+                className="h-20"
+                src="https://cdn-icons-png.flaticon.com/512/6132/6132222.png"
+                alt="C++"
+              />
             </div>
-          </div>
-          <div className="w-96 text-xl ml-auto">
-            Currently, I live in _________.  In my personal life, I love to travel
-            with my backpack, watch documentaries about geography, and explore
-            new traditional music.
+            <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
+              <img
+                className="h-20"
+                src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png"
+                alt="Python"
+              />
+            </div>
           </div>
         </div>
 
-        <div className="w-full flex flex-col py-40 ">
-          <div className="my-20 ml-80 flex relative group">
-            <div className="bg-yellow-400 h-[27rem] w-80 mx-auto rounded-lg relative right-32 group-hover:rotate-6 transition-all duration-200 origin-bottom top-5">
+        {/* Web Technologies */}
+        <div ref={webTechSection} className="mb-16">
+          <h2 className="text-3xl font-semibold mb-8 text-green-400 border-b-2 border-green-400 pb-2 w-fit">
+            Web Technologies
+          </h2>
+          <div className="flex flex-wrap gap-5">
+            <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
+              <img
+                className="h-20"
+                src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_html_icon_130541.png"
+                alt="HTML"
+              />
             </div>
-            <img className="h-[30rem] -rotate-2 absolute right-1/2 group-hover:-rotate-12 transition-all duration-200 origin-bottom" src="/Portfolio.png" alt="" />
+            <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
+              <img
+                className="h-20"
+                src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_css_icon_130661.png"
+                alt="CSS"
+              />
+            </div>
+            <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
+              <img
+                className="h-20"
+                src="https://cdn.icon-icons.com/icons2/3245/PNG/512/node_icon_198061.png"
+                alt="NodeJS"
+              />
+            </div>
+            <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
+              <img
+                className="h-20"
+                src="https://miro.medium.com/v2/resize:fit:1300/format:webp/1*4BtGcPz3JauG9qsNXzLMXA.gif"
+                alt="RESTful API"
+              />
+            </div>
+            <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
+              <img
+                className="h-20"
+                src="https://miro.medium.com/v2/resize:fit:600/format:webp/1*7kx2CABxc38topzfJ_vZsQ.jpeg"
+                alt="Auth"
+              />
+            </div>
+            <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
+              <img
+                className="h-20"
+                src="https://cdn.icon-icons.com/icons2/2699/PNG/512/graphql_logo_icon_171045.png"
+                alt="GraphQL"
+              />
+            </div>
+          </div>
+        </div>
 
+        {/* Frameworks and Libraries */}
+        <div ref={frameworkSection} className="mb-16">
+          <h2 className="text-3xl font-semibold mb-8 text-blue-400 border-b-2 border-blue-400 pb-2 w-fit">
+            Frameworks & Libraries
+          </h2>
+          <div className="flex flex-wrap gap-5">
+            <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
+              <img
+                className="h-20"
+                src="https://cdn.icon-icons.com/icons2/2415/PNG/512/react_original_wordmark_logo_icon_146375.png"
+                alt="ReactJS"
+              />
+            </div>
+            <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
+              <img
+                className="h-20"
+                src="https://cdn.icon-icons.com/icons2/2699/PNG/512/expressjs_logo_icon_169186.png"
+                alt="Express"
+              />
+            </div>
+            <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
+              <img
+                className="h-20"
+                src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_tailwind_icon_130128.png"
+                alt="Tailwind"
+              />
+            </div>
+            <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
+              <img
+                className="h-20"
+                src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_light_prisma_icon_130444.png"
+                alt="Prisma"
+              />
+            </div>
+            <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
+              <img
+                className="h-20"
+                src="https://cdn.icon-icons.com/icons2/2699/PNG/512/socketio_logo_icon_168806.png"
+                alt="Socket.io"
+              />
+            </div>
           </div>
-          <div className="mx-auto bg-yellow-400 text-black text-lg px-6 py-3 rounded-full">
-            <a href="https://drive.google.com/file/d/1DltfgAmzGgCoQI5zuAUjNbuWQSOJ-yWJ/view?usp=sharing">View Resume</a>
+        </div>
+
+        {/* Database */}
+        <div ref={databaseSection} className="mb-16">
+          <h2 className="text-3xl font-semibold mb-8 text-purple-400 border-b-2 border-purple-400 pb-2 w-fit">
+            Databases
+          </h2>
+          <div className="flex flex-wrap gap-5">
+            <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
+              <img
+                className="h-20"
+                src="https://cdn.icon-icons.com/icons2/2415/PNG/512/mongodb_original_wordmark_logo_icon_146425.png"
+                alt="MongoDB"
+              />
+            </div>
+            <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
+              <img
+                className="h-20"
+                src="https://cdn.icon-icons.com/icons2/2699/PNG/512/postgresql_vertical_logo_icon_168900.png"
+                alt="PostgreSQL"
+              />
+            </div>
+            <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
+              <img
+                className="h-20"
+                src="https://cdn.icon-icons.com/icons2/2415/PNG/512/redis_original_wordmark_logo_icon_146369.png"
+                alt="Redis"
+              />
+            </div>
+            <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
+              <img
+                className="h-20"
+                src="https://cdn.icon-icons.com/icons2/2699/PNG/512/mysql_official_logo_icon_169938.png"
+                alt="MySQL"
+              />
+            </div>
           </div>
-          <div className="flex gap-2  mx-auto my-6 ">
-            <a href="https://www.linkedin.com/in/piyush-cv/">Linkedin</a>
-            <a href="https://github.com/piyush-bit/">Github</a>
-            <a href="https://www.geeksforgeeks.org/user/pyshkmr2017/">GFG</a>
+        </div>
+
+        {/* Tools */}
+        <div ref={toolsSection} className="mb-16">
+          <h2 className="text-3xl font-semibold mb-8 text-red-400 border-b-2 border-red-400 pb-2 w-fit">
+            Development Tools
+          </h2>
+          <div className="flex flex-wrap gap-5">
+            <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
+              <img
+                className="h-20"
+                src="https://cdn-icons-png.flaticon.com/512/15466/15466163.png"
+                alt="Git"
+              />
+            </div>
+            <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
+              <img
+                className="h-20"
+                src="https://cdn-icons-png.flaticon.com/512/2111/2111432.png"
+                alt="GitHub"
+              />
+            </div>
+            <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
+              <img
+                className="h-20"
+                src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png"
+                alt="Figma"
+              />
+            </div>
+            <div className="w-40 h-40 bg-white rounded-md flex justify-center items-center skill-card hover:scale-105 transition-transform">
+              <img
+                className="h-20"
+                src="https://cdn.icon-icons.com/icons2/3053/PNG/512/postman_alt_macos_bigsur_icon_189814.png"
+                alt="Postman"
+              />
+            </div>
           </div>
         </div>
       </section>
-      <section id="contact" className="min-h-screen w-full px-5 sm:px-10 md:px-20 py-20 flex flex-col bg-[#141414]">
+      <section
+        id="resume"
+        className="w-full px-4 md:px-10 lg:px-20 py-20 bg-slate-800"
+        ref={resumeSection}
+      >
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row gap-8 justify-between">
+            <div className="max-w-md text-base md:text-xl">
+              I've worked across the entire tech stack, from frontend interfaces
+              to backend systems, with additional expertise in low-level
+              programming and infrastructure automation.
+            </div>
+          </div>
+          <div className="my-24 md:my-36 w-full text-center ">
+            <div
+              className="text-4xl sm:text-6xl lg:text-[9rem] font-semibold  sm:-my-[1.0rem] lg:-my-[1.8rem] relative opacity-0"
+              ref={fullstack}
+            >
+              Fullstack
+            </div>
+            <div
+              className="text-4xl sm:text-6xl lg:text-[9rem] font-semibold sm:-my-[1.0rem] lg:-my-[1.8rem] relative opacity-0"
+              ref={systems}
+            >
+              Systems
+            </div>
+            <div
+              className="text-4xl sm:text-6xl lg:text-[9rem] font-semibold sm:-my-[1.0rem] lg:-my-[1.8rem] py-2 relative opacity-0"
+              ref={devops}
+            >
+              DevOps
+            </div>
+          </div>
+
+          <div className="max-w-md text-base md:text-xl ml-auto mt-12 md:mt-0">
+            I'm passionate about optimization and performance, especially with
+            Go. Currently based in Bangalore, I enjoy backpacking, watching
+            geography documentaries, and exploring traditional music.
+          </div>
+
+          <div className="w-full flex flex-col py-20 md:py-40">
+            <div
+              className="my-10 md:my-20 mx-auto md:ml-auto flex relative group max-w-xl"
+              ref={resumeImage}
+            >
+              <div className="bg-yellow-400 h-48 sm:h-64 md:h-[27rem] w-60 sm:w-80 mx-auto rounded-lg relative  group-hover:rotate-6 transition-all duration-200 origin-bottom top-5"></div>
+              <img
+                className="h-56 sm:h-72 md:h-[30rem] -rotate-2 absolute right-0 md:right-1/2 group-hover:-rotate-12 transition-all duration-200 origin-bottom"
+                src="/Portfolio.png"
+                alt=""
+              />
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-center gap-6 justify-center mt-10">
+              <a
+                href="https://drive.google.com/file/d/1DltfgAmzGgCoQI5zuAUjNbuWQSOJ-yWJ/view?usp=sharing"
+                className="bg-yellow-400 text-black text-lg px-6 py-3 rounded-full hover:bg-yellow-500 transition-colors"
+              >
+                View Resume
+              </a>
+
+              <div className="flex gap-4 items-center">
+                <a
+                  href="https://www.linkedin.com/in/piyush-cv/"
+                  className="text-white hover:text-yellow-400 transition-colors"
+                >
+                  LinkedIn
+                </a>
+                <a
+                  href="https://github.com/piyush-bit/"
+                  className="text-white hover:text-yellow-400 transition-colors"
+                >
+                  Github
+                </a>
+                <a
+                  href="https://www.geeksforgeeks.org/user/pyshkmr2017/"
+                  className="text-white hover:text-yellow-400 transition-colors"
+                >
+                  GFG
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        id="contact"
+        className="min-h-screen w-full px-5 sm:px-10 md:px-20 py-20 flex flex-col bg-[#141414]"
+      >
         <div className="flex">
           <div className="w-80">
             <div className="text-7xl mt-10">
               Let's <br />
               Connect.
             </div>
-            
-            <div className="my-10"><a href="mailto:mr.piyush.cv@gmail.com">mr.piyush.cv@gmail.com</a></div>
+
+            <div className="my-10">
+              <a href="mailto:mr.piyush.cv@gmail.com">mr.piyush.cv@gmail.com</a>
+            </div>
             <div className="flex justify-between">
-              <a href="https://twitter.com/Piyush_cv"><img
-                className="h-5 invert "
-                src="https://cdn-icons-png.flaticon.com/64/5968/5968830.png"
-                alt="x"
-              /></a>
-              <a href="https://www.instagram.com/piyush.cv/">
-              <img
-                className="h-5 invert "
-                src=" https://cdn-icons-png.flaticon.com/64/717/717392.png"
-                alt="insta"
-              />
+              <a href="https://twitter.com/Piyush_cv">
+                <img
+                  className="h-5 invert "
+                  src="https://cdn-icons-png.flaticon.com/64/5968/5968830.png"
+                  alt="x"
+                />
               </a>
-              
-              <a href="https://www.linkedin.com/in/piyush-cv/"><img
-                className="h-5 invert "
-                src="https://cdn-icons-png.flaticon.com/64/3128/3128219.png"
-                alt="linkedin"
-              /></a>
-              <a href="https://github.com/piyush-bit/"><img
-                className="h-5 invert "
-                src="https://cdn-icons-png.flaticon.com/512/2111/2111425.png"
-                alt="github"
-              /></a>
-              <a href="https://www.geeksforgeeks.org/user/pyshkmr2017/"><img
-                className="h-5 invert "
-                src="https://cdn-icons-png.flaticon.com/512/10478/10478244.png"
-                alt="CLI"
-              /></a>
+              <a href="https://www.instagram.com/piyush.cv/">
+                <img
+                  className="h-5 invert "
+                  src=" https://cdn-icons-png.flaticon.com/64/717/717392.png"
+                  alt="insta"
+                />
+              </a>
+
+              <a href="https://www.linkedin.com/in/piyush-cv/">
+                <img
+                  className="h-5 invert "
+                  src="https://cdn-icons-png.flaticon.com/64/3128/3128219.png"
+                  alt="linkedin"
+                />
+              </a>
+              <a href="https://github.com/piyush-bit/">
+                <img
+                  className="h-5 invert "
+                  src="https://cdn-icons-png.flaticon.com/512/2111/2111425.png"
+                  alt="github"
+                />
+              </a>
+              <a href="https://www.geeksforgeeks.org/user/pyshkmr2017/">
+                <img
+                  className="h-5 invert "
+                  src="https://cdn-icons-png.flaticon.com/512/10478/10478244.png"
+                  alt="CLI"
+                />
+              </a>
             </div>
           </div>
           <div></div>
@@ -579,30 +840,32 @@ skillSections.forEach((section, index) => {
 }
 
 const ProjectElement = ({ project }) => {
-    return <div className="bg-orange-300 w-full h-full rounded-2xl px-6 overflow-hidden max-w-[35rem] max-h-[90vh]">
-    <div className="flex my-10 ">
-      <div>
-        <div className="text-black text-3xl ">{project.name}</div>
-        <div className="text-black opacity-0 group-hover:opacity-100">
-          {project.year}
+  return (
+    <div className="bg-orange-300 w-full h-full rounded-2xl px-6 overflow-hidden max-w-[35rem] max-h-[90vh]">
+      <div className="flex my-10 ">
+        <div>
+          <div className="text-black text-3xl ">{project.name}</div>
+          <div className="text-black opacity-0 group-hover:opacity-100">
+            {project.year}
+          </div>
+        </div>
+        <div className="flex items-center gap-2 ml-auto">
+          <div className="text-black text-xl font-light">Visit</div>
+          <div className=" h-6 w-6 rounded-full bg-black flex">
+            <img
+              className="h-4 -rotate-45 invert m-auto"
+              src="https://cdn-icons-png.flaticon.com/64/545/545682.png"
+              alt=""
+            />
+          </div>
         </div>
       </div>
-      <div className="flex items-center gap-2 ml-auto">
-        <div className="text-black text-xl font-light">Visit</div>
-        <div className=" h-6 w-6 rounded-full bg-black flex">
-          <img
-            className="h-4 -rotate-45 invert m-auto"
-            src="https://cdn-icons-png.flaticon.com/64/545/545682.png"
-            alt=""
-          />
-        </div>
-      </div>
-    </div>
 
-    <div className="pt-8">
-      <img className="rounded-lg" src={project.image} alt="" />
+      <div className="pt-8">
+        <img className="rounded-lg" src={project.image} alt="" />
+      </div>
     </div>
-  </div>;
-}
+  );
+};
 
 export default App;
