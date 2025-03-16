@@ -4,6 +4,8 @@ import yc from "./assets/ycourses.netlify.app_.png";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ShootingStars } from "./ui/ss";
 import { StarsBackground } from "./ui/sb";
+import BlurText from "./ui/BlurText";
+import CircularText from "./ui/CircularText";
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
@@ -287,7 +289,9 @@ function App() {
         <ShootingStars starWidth={30} />
         <StarsBackground />
         <header className="flex gap-4 md:gap-8 items-center my-10 md:px-20 px-4">
-          <div></div>
+          <div>
+            
+          </div>
           <div className="ml-auto uppercase">
             Banglore ,{" "}
             {new Intl.DateTimeFormat("en-IN", {
@@ -309,17 +313,39 @@ function App() {
         </header>
         <div className="fixed h-screen w-full -z-30 -top-10">
           <div className="relative scale-100 center shrink-0" ref={hero}>
-            <div className=" text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-semibold text-center py-20 ">
+            <div className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-semibold text-center py-20 ">
               <div className="flex justify-center items-end gap-4 ">
-                I'm Piyush
+              <BlurText
+                className={"text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-semibold text-center"}
+                text="I'm Piyush"
+                delay={150}
+                animateBy="words"
+                direction="top"
+                onAnimationComplete={()=>{}}
+              />
                 <img
                   src="https://images.squarespace-cdn.com/content/v1/5c5da592a9ab9540371bec64/1577650055324-W31WDV3JYGX453Z2KUZ5/DSC00274.jpg?format=2500w"
                   alt=""
                   className="h-8 w-[72px] md:h-16 md:w-36  lg:h-24 lg:w-56 object-cover rounded-full "
                 />
               </div>
-              Creative Fullstack <br />
-              Developer.
+              <BlurText
+                className={"text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-semibold text-center"}
+                text="Creative Fullstack"
+                delay={250}
+                animateBy="words"
+                direction="top"
+                onAnimationComplete={()=>{}}
+              />
+              <BlurText
+                className={"text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-semibold text-center"}
+                text="Developer."
+                delay={350}
+                animateBy="words"
+                direction="top"
+                onAnimationComplete={()=>{}}
+              />
+              
             </div>
             <div className="text-center text-xs md:text-xl lg:text-3xl font-light pb-20 px-4">
               I build complete software solutions from frontend to backend, with

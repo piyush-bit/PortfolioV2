@@ -21,7 +21,8 @@ body{
   transition-duration: 75ms;
   transition-timing-function: ease-out;
   z-index: 9999;
-  display: none;
+  opacity: 70%;
+pointer-events: none;
 }
 
 .showcase{
